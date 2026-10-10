@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+
+# Generated data and local experiment output
+data/
+benchmarks/results/*
+!benchmarks/results/.gitkeep
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/

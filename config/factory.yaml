@@ -1,0 +1,111 @@
+# Virtual factory definition.
+# Every experiment in the series uses this file with a fixed seed, so results are reproducible.
+
+site: acme-plant
+start: "2026-01-05T06:00:00Z"   # simulation clock start (UTC)
+seed: 42
+
+# Sensor behaviour, referenced by name from machine_types below.
+#   kind: gauge    -> mean-reverting noisy signal (pressure, temperature, speed, vibration)
+#   kind: counter  -> monotonic count that only grows while the machine runs
+#   kind: state    -> machine state string, published on change
+# Common options:
+#   interval     sampling period in seconds
+#   deadband     report-by-exception: publish only when the value moved at least this much
+#   max_silence  publish anyway after this many seconds without a message (heartbeat)
+#   on_fault     value the signal falls towards while the machine is in FAULT (omit = unaffected)
+#   min / max    physical limits (e.g. speed can't be negative)
+sensor_profiles:
+  pressure:
+    kind: gauge
+    unit: mbar
+    mean: 800
+    sigma: 3.0
+    theta: 0.05
+    deadband: 2.0
+    interval: 1
+    max_silence: 60
+    on_fault: 120
+    min: 0
+  temperature:
+    kind: gauge
+    unit: degC
+    mean: 78
+    sigma: 0.08
+    theta: 0.01
+    deadband: 0.2
+    interval: 5
+    max_silence: 300
+  speed:
+    kind: gauge
+    unit: bottles/min
+    mean: 120
+    sigma: 0.8
+    theta: 0.2
+    deadband: 1.0
+    interval: 1
+    max_silence: 60
+    on_fault: 0
+    min: 0
+  vibration:
+    kind: gauge
+    unit: mm/s
+    mean: 2.2
+    sigma: 0.25
+    theta: 0.3
+    deadband: 0.15
+    interval: 1
+    max_silence: 60
+    on_fault: 0.2
+    min: 0
+    trend_per_day: 0.05          # slow wear, useful for predictive-maintenance experiments
+  count:
+    kind: counter
+    unit: bottles
+    rate: 2.0                    # items per second while RUNNING
+    interval: 1
+    max_silence: 60
+  state:
+    kind: state
+
+machine_types:
+  filler:      [pressure, temperature, speed, vibration, count, state]
+  capper:      [temperature, speed, vibration, count, state]
+  labeler:     [temperature, speed, count, state]
+  case-packer: [speed, vibration, count, state]
+  palletizer:  [vibration, count, state]
+
+# ISA-95 style hierarchy: site / area / line / machine
+areas:
+  filling-area:
+    line-1: [filler, capper, labeler]
+    line-2: [filler, capper, labeler]
+  packaging-area:
+    line-3: [case-packer, palletizer]
+
+# Machine faults (FAULT state). Durations are log-normal around the median.
+faults:
+  rate_per_hour: 0.4
+  median_seconds: 300
+  spread: 0.8
+
+# Stuck sensors: the value freezes at its last reading.
+frozen_sensors:
+  rate_per_day: 0.3
+  median_seconds: 1800
+  spread: 0.6
+
+# Network outages per line (edge node). Data is buffered and delivered late
+# (store and forward), flagged as historical.
+outages:
+  rate_per_day: 2
+  median_seconds: 180
+  spread: 0.7
+
+mqtt:
+  host: localhost
+  port: 1883
+  qos: 0
+
+sparkplug:
+  group_id: acme-plant

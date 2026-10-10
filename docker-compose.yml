@@ -1,0 +1,44 @@
+# The virtual factory: an MQTT broker plus a simulator publishing Sparkplug B.
+#
+#   docker compose up -d                      broker + factory (Sparkplug B, real time)
+#   docker compose --profile debug up         ... plus a listener printing decoded messages
+#   docker compose --profile json up -d       ... plus the same factory as plain UNS JSON (acme-plant/...)
+#
+# Lakehouse services (MinIO, Iceberg catalog) arrive with the table-design experiments.
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./docker/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    healthcheck:
+      test: ["CMD", "mosquitto_sub", "-t", "$$SYS/#", "-C", "1", "-W", "3"]
+      interval: 5s
+      retries: 10
+
+  factory:
+    build: .
+    command: ["simulate", "--mode", "sparkplug", "--host", "mosquitto", "--duration", "7d", "--speed", "${SPEED:-1}"]
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    restart: unless-stopped
+
+  factory-json:
+    build: .
+    command: ["simulate", "--mode", "mqtt", "--host", "mosquitto", "--duration", "7d", "--speed", "${SPEED:-1}"]
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    restart: unless-stopped
+    profiles: ["json"]
+
+  listener:
+    build: .
+    command: ["listen", "--mode", "sparkplug", "--host", "mosquitto"]
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    profiles: ["debug"]
