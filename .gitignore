@@ -5,10 +5,8 @@ __pycache__/
 .venv/
 .pytest_cache/
 
-# Generated data and local experiment output
+# Generated data (experiment results in benchmarks/results/ are committed on purpose)
 data/
-benchmarks/results/*
-!benchmarks/results/.gitkeep
 
 # OS / editors
 .DS_Store

@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "experiment": "01_storage_footprint",
+    "duration_s": 86400,
+    "seed": 42,
+    "machines": 8,
+    "signals": 37,
+    "simulated_samples": 2090880,
+    "published_readings": 1158046,
+    "report_by_exception_ratio": 0.554,
+    "repeats": 3,
+    "environment": {
+      "date_utc": "2026-10-11T23:01:46+00:00",
+      "python": "3.14.8",
+      "platform": "macOS-26.6.2-x86_64-i386-64bit-Mach-O",
+      "machine": "x86_64",
+      "cpus": 16,
+      "numpy": "2.5.3",
+      "pyarrow": "26.0.0",
+      "duckdb": "1.5.6"
+    }
+  },
+  "results": [
+    {
+      "format": "JSON lines (raw MQTT messages)",
+      "mode": "report-by-exception",
+      "rows": 1158046,
+      "size_mb": 158.83
+    },
+    {
+      "format": "JSON lines (raw MQTT messages)",
+      "mode": "every sample",
+      "rows": 2091024,
+      "size_mb": 287.65
+    },
+    {
+      "format": "Parquet, best variant",
+      "mode": "report-by-exception",
+      "rows": 1158046,
+      "size_mb": 3.13
+    },
+    {
+      "format": "Parquet, best variant",
+      "mode": "every sample",
+      "rows": 2091024,
+      "size_mb": 4.85
+    }
+  ]
+}

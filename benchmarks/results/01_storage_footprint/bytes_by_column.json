@@ -1,0 +1,410 @@
+{
+  "meta": {
+    "experiment": "01_storage_footprint",
+    "duration_s": 86400,
+    "seed": 42,
+    "machines": 8,
+    "signals": 37,
+    "simulated_samples": 2090880,
+    "published_readings": 1158046,
+    "report_by_exception_ratio": 0.554,
+    "repeats": 3,
+    "environment": {
+      "date_utc": "2026-10-11T23:01:46+00:00",
+      "python": "3.14.8",
+      "platform": "macOS-26.6.2-x86_64-i386-64bit-Mach-O",
+      "machine": "x86_64",
+      "cpus": 16,
+      "numpy": "2.5.3",
+      "pyarrow": "26.0.0",
+      "duckdb": "1.5.6"
+    }
+  },
+  "results": [
+    {
+      "format": "Parquet, uncompressed",
+      "column": "event_ts",
+      "bytes": 1051290
+    },
+    {
+      "format": "Parquet, uncompressed",
+      "column": "delivered_ts",
+      "bytes": 1010025
+    },
+    {
+      "format": "Parquet, uncompressed",
+      "column": "site",
+      "bytes": 3714
+    },
+    {
+      "format": "Parquet, uncompressed",
+      "column": "area",
+      "bytes": 196079
+    },
+    {
+      "format": "Parquet, uncompressed",
+      "column": "line",
+      "bytes": 290012
+    },
+    {
+      "format": "Parquet, uncompressed",
+      "column": "machine",
+      "bytes": 440037
+    },
+    {
+      "format": "Parquet, uncompressed",
+      "column": "metric",
+      "bytes": 439204
+    },
+    {
+      "format": "Parquet, uncompressed",
+      "column": "unit",
+      "bytes": 438675
+    },
+    {
+      "format": "Parquet, uncompressed",
+      "column": "value",
+      "bytes": 6312481
+    },
+    {
+      "format": "Parquet, uncompressed",
+      "column": "value_str",
+      "bytes": 3674
+    },
+    {
+      "format": "Parquet, uncompressed",
+      "column": "historical",
+      "bytes": 147529
+    },
+    {
+      "format": "Parquet, snappy",
+      "column": "event_ts",
+      "bytes": 781127
+    },
+    {
+      "format": "Parquet, snappy",
+      "column": "delivered_ts",
+      "bytes": 740557
+    },
+    {
+      "format": "Parquet, snappy",
+      "column": "site",
+      "bytes": 3836
+    },
+    {
+      "format": "Parquet, snappy",
+      "column": "area",
+      "bytes": 159433
+    },
+    {
+      "format": "Parquet, snappy",
+      "column": "line",
+      "bytes": 200783
+    },
+    {
+      "format": "Parquet, snappy",
+      "column": "machine",
+      "bytes": 405008
+    },
+    {
+      "format": "Parquet, snappy",
+      "column": "metric",
+      "bytes": 438380
+    },
+    {
+      "format": "Parquet, snappy",
+      "column": "unit",
+      "bytes": 437839
+    },
+    {
+      "format": "Parquet, snappy",
+      "column": "value",
+      "bytes": 4257119
+    },
+    {
+      "format": "Parquet, snappy",
+      "column": "value_str",
+      "bytes": 3796
+    },
+    {
+      "format": "Parquet, snappy",
+      "column": "historical",
+      "bytes": 9960
+    },
+    {
+      "format": "Parquet, zstd",
+      "column": "event_ts",
+      "bytes": 420119
+    },
+    {
+      "format": "Parquet, zstd",
+      "column": "delivered_ts",
+      "bytes": 392264
+    },
+    {
+      "format": "Parquet, zstd",
+      "column": "site",
+      "bytes": 4263
+    },
+    {
+      "format": "Parquet, zstd",
+      "column": "area",
+      "bytes": 110036
+    },
+    {
+      "format": "Parquet, zstd",
+      "column": "line",
+      "bytes": 127654
+    },
+    {
+      "format": "Parquet, zstd",
+      "column": "machine",
+      "bytes": 282104
+    },
+    {
+      "format": "Parquet, zstd",
+      "column": "metric",
+      "bytes": 343793
+    },
+    {
+      "format": "Parquet, zstd",
+      "column": "unit",
+      "bytes": 343270
+    },
+    {
+      "format": "Parquet, zstd",
+      "column": "value",
+      "bytes": 3486037
+    },
+    {
+      "format": "Parquet, zstd",
+      "column": "value_str",
+      "bytes": 4223
+    },
+    {
+      "format": "Parquet, zstd",
+      "column": "historical",
+      "bytes": 3846
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "column": "event_ts",
+      "bytes": 2858078
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "column": "delivered_ts",
+      "bytes": 2775292
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "column": "site",
+      "bytes": 4263
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "column": "area",
+      "bytes": 4584
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "column": "line",
+      "bytes": 3806
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "column": "machine",
+      "bytes": 4010
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "column": "metric",
+      "bytes": 4024
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "column": "unit",
+      "bytes": 3909
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "column": "value",
+      "bytes": 2511066
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "column": "value_str",
+      "bytes": 2840
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "column": "historical",
+      "bytes": 4443
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "column": "event_ts",
+      "bytes": 557425
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "column": "delivered_ts",
+      "bytes": 574226
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "column": "site",
+      "bytes": 4263
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "column": "area",
+      "bytes": 4584
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "column": "line",
+      "bytes": 3806
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "column": "machine",
+      "bytes": 4010
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "column": "metric",
+      "bytes": 4024
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "column": "unit",
+      "bytes": 3909
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "column": "value",
+      "bytes": 2511066
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "column": "value_str",
+      "bytes": 2840
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "column": "historical",
+      "bytes": 4443
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "column": "event_ts",
+      "bytes": 557425
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "column": "delivered_ts",
+      "bytes": 574226
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "column": "site",
+      "bytes": 4263
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "column": "area",
+      "bytes": 4584
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "column": "line",
+      "bytes": 3806
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "column": "machine",
+      "bytes": 4010
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "column": "metric",
+      "bytes": 4024
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "column": "unit",
+      "bytes": 3909
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "column": "value",
+      "bytes": 4128587
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "column": "value_str",
+      "bytes": 2840
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "column": "historical",
+      "bytes": 4443
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "column": "event_ts",
+      "bytes": 557425
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "column": "delay_ms",
+      "bytes": 30925
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "column": "site",
+      "bytes": 4263
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "column": "area",
+      "bytes": 4584
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "column": "line",
+      "bytes": 3806
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "column": "machine",
+      "bytes": 4010
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "column": "metric",
+      "bytes": 4024
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "column": "unit",
+      "bytes": 3909
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "column": "value",
+      "bytes": 2511066
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "column": "value_str",
+      "bytes": 2840
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "column": "historical",
+      "bytes": 4443
+    }
+  ]
+}

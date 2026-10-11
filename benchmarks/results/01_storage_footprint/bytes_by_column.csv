@@ -1,0 +1,78 @@
+format,column,bytes
+"Parquet, uncompressed",event_ts,1051290
+"Parquet, uncompressed",delivered_ts,1010025
+"Parquet, uncompressed",site,3714
+"Parquet, uncompressed",area,196079
+"Parquet, uncompressed",line,290012
+"Parquet, uncompressed",machine,440037
+"Parquet, uncompressed",metric,439204
+"Parquet, uncompressed",unit,438675
+"Parquet, uncompressed",value,6312481
+"Parquet, uncompressed",value_str,3674
+"Parquet, uncompressed",historical,147529
+"Parquet, snappy",event_ts,781127
+"Parquet, snappy",delivered_ts,740557
+"Parquet, snappy",site,3836
+"Parquet, snappy",area,159433
+"Parquet, snappy",line,200783
+"Parquet, snappy",machine,405008
+"Parquet, snappy",metric,438380
+"Parquet, snappy",unit,437839
+"Parquet, snappy",value,4257119
+"Parquet, snappy",value_str,3796
+"Parquet, snappy",historical,9960
+"Parquet, zstd",event_ts,420119
+"Parquet, zstd",delivered_ts,392264
+"Parquet, zstd",site,4263
+"Parquet, zstd",area,110036
+"Parquet, zstd",line,127654
+"Parquet, zstd",machine,282104
+"Parquet, zstd",metric,343793
+"Parquet, zstd",unit,343270
+"Parquet, zstd",value,3486037
+"Parquet, zstd",value_str,4223
+"Parquet, zstd",historical,3846
+"Parquet, zstd, sorted by sensor + time",event_ts,2858078
+"Parquet, zstd, sorted by sensor + time",delivered_ts,2775292
+"Parquet, zstd, sorted by sensor + time",site,4263
+"Parquet, zstd, sorted by sensor + time",area,4584
+"Parquet, zstd, sorted by sensor + time",line,3806
+"Parquet, zstd, sorted by sensor + time",machine,4010
+"Parquet, zstd, sorted by sensor + time",metric,4024
+"Parquet, zstd, sorted by sensor + time",unit,3909
+"Parquet, zstd, sorted by sensor + time",value,2511066
+"Parquet, zstd, sorted by sensor + time",value_str,2840
+"Parquet, zstd, sorted by sensor + time",historical,4443
+"Parquet, zstd, sorted + delta timestamps",event_ts,557425
+"Parquet, zstd, sorted + delta timestamps",delivered_ts,574226
+"Parquet, zstd, sorted + delta timestamps",site,4263
+"Parquet, zstd, sorted + delta timestamps",area,4584
+"Parquet, zstd, sorted + delta timestamps",line,3806
+"Parquet, zstd, sorted + delta timestamps",machine,4010
+"Parquet, zstd, sorted + delta timestamps",metric,4024
+"Parquet, zstd, sorted + delta timestamps",unit,3909
+"Parquet, zstd, sorted + delta timestamps",value,2511066
+"Parquet, zstd, sorted + delta timestamps",value_str,2840
+"Parquet, zstd, sorted + delta timestamps",historical,4443
+"Parquet, zstd, sorted + delta + byte-stream-split values",event_ts,557425
+"Parquet, zstd, sorted + delta + byte-stream-split values",delivered_ts,574226
+"Parquet, zstd, sorted + delta + byte-stream-split values",site,4263
+"Parquet, zstd, sorted + delta + byte-stream-split values",area,4584
+"Parquet, zstd, sorted + delta + byte-stream-split values",line,3806
+"Parquet, zstd, sorted + delta + byte-stream-split values",machine,4010
+"Parquet, zstd, sorted + delta + byte-stream-split values",metric,4024
+"Parquet, zstd, sorted + delta + byte-stream-split values",unit,3909
+"Parquet, zstd, sorted + delta + byte-stream-split values",value,4128587
+"Parquet, zstd, sorted + delta + byte-stream-split values",value_str,2840
+"Parquet, zstd, sorted + delta + byte-stream-split values",historical,4443
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",event_ts,557425
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",delay_ms,30925
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",site,4263
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",area,4584
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",line,3806
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",machine,4010
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",metric,4024
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",unit,3909
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",value,2511066
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",value_str,2840
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",historical,4443

@@ -1,0 +1,12 @@
+format,size_mb,bytes_per_reading,write_seconds,gb_per_year,vs_json
+JSON lines (raw MQTT messages),158.83,137.15,6.44,57.97,baseline
+JSON lines + gzip,7.39,6.38,10.69,2.7,21.5x smaller
+CSV,125.23,108.14,0.41,45.71,1.3x smaller
+CSV + gzip,7.06,6.1,5.39,2.58,22.5x smaller
+"Parquet, uncompressed",10.34,8.93,0.37,3.77,15.4x smaller
+"Parquet, snappy",7.44,6.43,0.37,2.72,21.3x smaller
+"Parquet, zstd",5.52,4.77,0.41,2.02,28.8x smaller
+"Parquet, zstd, sorted by sensor + time",8.18,7.06,0.36,2.99,19.4x smaller
+"Parquet, zstd, sorted + delta timestamps",3.68,3.18,0.33,1.34,43.2x smaller
+"Parquet, zstd, sorted + delta + byte-stream-split values",5.3,4.57,0.3,1.93,30.0x smaller
+"Parquet, zstd, sorted + delta + delay instead of delivered_ts",3.13,2.71,0.32,1.14,50.7x smaller

@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "experiment": "01_storage_footprint",
+    "duration_s": 86400,
+    "seed": 42,
+    "machines": 8,
+    "signals": 37,
+    "simulated_samples": 2090880,
+    "published_readings": 1158046,
+    "report_by_exception_ratio": 0.554,
+    "repeats": 3,
+    "environment": {
+      "date_utc": "2026-10-11T23:01:46+00:00",
+      "python": "3.14.8",
+      "platform": "macOS-26.6.2-x86_64-i386-64bit-Mach-O",
+      "machine": "x86_64",
+      "cpus": 16,
+      "numpy": "2.5.3",
+      "pyarrow": "26.0.0",
+      "duckdb": "1.5.6"
+    }
+  },
+  "results": [
+    {
+      "format": "JSON lines (raw MQTT messages)",
+      "size_mb": 158.83,
+      "bytes_per_reading": 137.15,
+      "write_seconds": 6.44,
+      "gb_per_year": 57.97,
+      "vs_json": "baseline"
+    },
+    {
+      "format": "JSON lines + gzip",
+      "size_mb": 7.39,
+      "bytes_per_reading": 6.38,
+      "write_seconds": 10.69,
+      "gb_per_year": 2.7,
+      "vs_json": "21.5x smaller"
+    },
+    {
+      "format": "CSV",
+      "size_mb": 125.23,
+      "bytes_per_reading": 108.14,
+      "write_seconds": 0.41,
+      "gb_per_year": 45.71,
+      "vs_json": "1.3x smaller"
+    },
+    {
+      "format": "CSV + gzip",
+      "size_mb": 7.06,
+      "bytes_per_reading": 6.1,
+      "write_seconds": 5.39,
+      "gb_per_year": 2.58,
+      "vs_json": "22.5x smaller"
+    },
+    {
+      "format": "Parquet, uncompressed",
+      "size_mb": 10.34,
+      "bytes_per_reading": 8.93,
+      "write_seconds": 0.37,
+      "gb_per_year": 3.77,
+      "vs_json": "15.4x smaller"
+    },
+    {
+      "format": "Parquet, snappy",
+      "size_mb": 7.44,
+      "bytes_per_reading": 6.43,
+      "write_seconds": 0.37,
+      "gb_per_year": 2.72,
+      "vs_json": "21.3x smaller"
+    },
+    {
+      "format": "Parquet, zstd",
+      "size_mb": 5.52,
+      "bytes_per_reading": 4.77,
+      "write_seconds": 0.41,
+      "gb_per_year": 2.02,
+      "vs_json": "28.8x smaller"
+    },
+    {
+      "format": "Parquet, zstd, sorted by sensor + time",
+      "size_mb": 8.18,
+      "bytes_per_reading": 7.06,
+      "write_seconds": 0.36,
+      "gb_per_year": 2.99,
+      "vs_json": "19.4x smaller"
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta timestamps",
+      "size_mb": 3.68,
+      "bytes_per_reading": 3.18,
+      "write_seconds": 0.33,
+      "gb_per_year": 1.34,
+      "vs_json": "43.2x smaller"
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + byte-stream-split values",
+      "size_mb": 5.3,
+      "bytes_per_reading": 4.57,
+      "write_seconds": 0.3,
+      "gb_per_year": 1.93,
+      "vs_json": "30.0x smaller"
+    },
+    {
+      "format": "Parquet, zstd, sorted + delta + delay instead of delivered_ts",
+      "size_mb": 3.13,
+      "bytes_per_reading": 2.71,
+      "write_seconds": 0.32,
+      "gb_per_year": 1.14,
+      "vs_json": "50.7x smaller"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+format,mode,rows,size_mb
+JSON lines (raw MQTT messages),report-by-exception,1158046,158.83
+JSON lines (raw MQTT messages),every sample,2091024,287.65
+"Parquet, best variant",report-by-exception,1158046,3.13
+"Parquet, best variant",every sample,2091024,4.85

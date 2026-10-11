@@ -17,8 +17,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-bench = ["duckdb>=1.0"]
-dev = ["pytest>=8", "duckdb>=1.0"]
+bench = ["duckdb>=1.0", "matplotlib>=3.7"]
+dev = ["pytest>=8", "duckdb>=1.0", "matplotlib>=3.7"]
 
 [project.scripts]
 unslake = "unslake.cli:main"
