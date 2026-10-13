@@ -129,8 +129,8 @@ Prefer plain topics? `--mode mqtt` publishes `acme-plant/filling-area/line-2/fil
 | Part | Topic | Status |
 |---|---|---|
 | 1 | The missing link in factory data | ✅ published |
-| 2 | Building a virtual factory | ✅ code ready |
-| 3 | How much space does sensor data really take? | 🔬 experiment ready |
+| 2 | Building a virtual factory | ✅ published |
+| 3 | How much space does sensor data really take? | ✅ code and results ready |
 | 4–8 | Table layout, partitioning, small files, throughput, correctness | ⏳ planned |
 | 9–13 | Building the UNS to Iceberg connector | ⏳ planned |
 
