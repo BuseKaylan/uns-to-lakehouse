@@ -9,7 +9,7 @@ the exact run that produced it.
 
 | # | Question | Script | Blog post | Status |
 |---|---|---|---|---|
-| 01 | How much space does sensor data really take? | `storage_footprint.py` | Part 3 | ready |
+| 01 | How much space does sensor data really take? | `storage_footprint.py` | Part 3 | done |
 | 02 | Narrow vs. wide vs. hybrid tables in Iceberg | | Part 4 | planned |
 | 03 | Partitioning and sort order | | Part 5 | planned |
 | 04 | Commit interval and the small files problem | | Part 6 | planned |
